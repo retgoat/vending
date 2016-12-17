@@ -1,7 +1,3 @@
-defmodule InitETS do
-  use Maru.Middleware
-end
-
 defmodule Vending.API1 do
   use Maru.Router
   plug Plug.Logger
