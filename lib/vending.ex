@@ -26,6 +26,7 @@ defmodule Vending.API1 do
     desc "Purchase a product" do
       route_param :product_id do
         get :purchase do
+          Cash.start_link
           respond_with(conn, Product.purchase(params[:product_id]), 200)
         end
       end
