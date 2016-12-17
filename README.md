@@ -4,6 +4,8 @@ Simple vending machine selling used spaceships.
 
 ![diagram](https://github.com/retgoat/vending/raw/master/static/images/vending-diagram.png "Vending machine diagram")
 
+[Postman](https://getpostman.com) collection for it is [here](https://www.getpostman.com/collections/bb20c0993f826b93240f)
+
 
 ## Starting
 
@@ -13,7 +15,7 @@ mix deps.get
 iex -S mix
 ```
 
-Then go to [http://localhost:8880](http://localhost:8880)
+Open [http://localhost:8880](http://localhost:8880) in your browser.
 
 ## Using
 
