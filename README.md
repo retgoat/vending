@@ -1,5 +1,9 @@
 # Vending
 
+Simple vending machine selling used spaceships.
+
+![diagram](https://github.com/retgoat/vending/raw/master/static/images/vending-diagram.png "Vending machine diagram")
+
 
 ## Starting
 
@@ -13,13 +17,13 @@ Then go to [http://localhost:8880](http://localhost:8880)
 
 ## Using
 
-**Get all products**
+###Get all products
 
-*Request*
+**Request**
 
 `GET http://localhost:8880/products`
 
-*Response*
+**Response**
 
 ```json
 [
@@ -66,13 +70,13 @@ Then go to [http://localhost:8880](http://localhost:8880)
 ]
 ```
 
-**Get available cash nominals**
+###Get available cash nominals
 
-*Request*
+**Request**
 
 `GET http://localhost:8880/cash/nominals`
 
-*Response*
+**Response**
 
 ```json
 {
@@ -89,9 +93,9 @@ Then go to [http://localhost:8880](http://localhost:8880)
 }
 ```
 
-**Insert cash**
+###Insert cash
 
-*Request*
+**Request**
 
 `PUT http://localhost:8880/cash`
 
@@ -101,7 +105,7 @@ Then go to [http://localhost:8880](http://localhost:8880)
 }
 ```
 
-*Response*
+**Response**
 
 ```json
 {
@@ -122,13 +126,13 @@ Then go to [http://localhost:8880](http://localhost:8880)
 }
 ```
 
-**Get inserted cash**
+###Get inserted cash
 
-*Request*
+**Request**
 
 `GET http://localhost:8880/cash/given`
 
-*Response*
+**Response**
 
 ```json
 {
@@ -139,13 +143,13 @@ Then go to [http://localhost:8880](http://localhost:8880)
 }
 ```
 
-**Purchase**
+###Purchase
 
-*Request*
+**Request**
 
 `GET http://localhost:8880/products/:product_id/purchase`
 
-*Response*
+**Response**
 
 Product purchased successfully
 
@@ -171,6 +175,4 @@ Purchase error
     "error": "Can not purchase: not enough money"
 }
 ```
-![diagram](https://github.com/retgoat/vending/raw/master/static/images/vending-diagram.png "Vending machine diagram")
-
 
