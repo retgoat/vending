@@ -14,7 +14,7 @@ defmodule Cash do
   end
 
   @doc """
-  Gets a value from the `bucket` by `key`.
+  Gets a value from the bucket by `key`.
   """
   def get do
     cash = Agent.get(__MODULE__, &Map.get(&1, :money))
@@ -25,60 +25,32 @@ defmodule Cash do
   end
 
   @doc """
-  Puts the `value` for the given `key` in the `bucket`.
+  Puts the `value` for bucket
   """
   def store(value) do
     Agent.update(__MODULE__, &Map.put(&1, :money, value))
   end
 
-
+  @doc """
+  Adds given `value` to the current bucket value
+  """
   def add(value) do
     store(get + value)
     get
   end
 
+  @doc """
+  Deducts given `value` from the current bucket value
+  """
   def deduct(value) do
     store(get - value)
     get
   end
 
+  @doc """
+  DEstroys the bucket
+  """
   def destroy do
     Agent.get_and_update(__MODULE__, &Map.pop(&1, :money))
   end
-
-
-  # def init do
-  #   case :ets.info(:cash) do
-  #     :undefined ->
-  #       :ets.new(:cash, [:named_table, :set])
-  #       current
-  #     _ -> current
-  #   end
-  # end
-
-  # def store(cash) do
-  #   :ets.insert(:cash, {"current", cash})
-  #   current
-  # end
-
-  # def add(value) do
-  #   store(current + value)
-  # end
-
-  # def deduct(value) do
-  #   IO.inspect current
-  #   store(current - value)
-  # end
-
-  # def destroy do
-  #   :ets.delete(:cash)
-  # end
-
-  # def current do
-  #   case :ets.lookup(:cash, "current") do
-  #     l when length(l) == 0 -> 0
-  #     l when length(l) > 0 -> hd(l) |> elem(1)
-  #     _ -> 0
-  #   end
-  # end
 end

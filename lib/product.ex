@@ -17,12 +17,18 @@ defmodule Product do
     @products
   end
 
+  @doc """
+  Returns product by `id`
+  """
   def find(id) do
     Enum.filter(@products, fn x ->
       x[:id] == id
     end) |> hd
   end
 
+  @doc """
+  Returns products that can be purchased by given `cash`
+  """
   def available(cash) do
     Enum.filter(@products, fn x ->
       x[:price][:amount] <= cash
@@ -37,6 +43,9 @@ defmodule Product do
     end
   end
 
+  @doc """
+  Purchase a product by `id`
+  """
   def purchase(id) do
     product = find(String.to_integer(id))
     if can_purchase?(product) do
