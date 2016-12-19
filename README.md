@@ -149,7 +149,7 @@ Open [http://localhost:8880](http://localhost:8880) in your browser.
 
 **Request**
 
-`GET http://localhost:8880/products/:product_id/purchase`
+`POST http://localhost:8880/products/:product_id/purchase`
 
 **Response**
 
