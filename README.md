@@ -19,7 +19,7 @@ Open [http://localhost:8880](http://localhost:8880) in your browser.
 
 ## Using
 
-###Get all products
+### Get all products
 
 **Request**
 
@@ -72,7 +72,7 @@ Open [http://localhost:8880](http://localhost:8880) in your browser.
 ]
 ```
 
-###Get available cash nominals
+### Get available cash nominals
 
 **Request**
 
@@ -95,7 +95,7 @@ Open [http://localhost:8880](http://localhost:8880) in your browser.
 }
 ```
 
-###Insert cash
+### Insert cash
 
 **Request**
 
@@ -128,7 +128,7 @@ Open [http://localhost:8880](http://localhost:8880) in your browser.
 }
 ```
 
-###Get inserted cash
+### Get inserted cash
 
 **Request**
 
@@ -145,7 +145,7 @@ Open [http://localhost:8880](http://localhost:8880) in your browser.
 }
 ```
 
-###Purchase
+### Purchase
 
 **Request**
 
