@@ -14,7 +14,7 @@ defmodule Vending.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :maru]]
+    [applications: [:logger, :maru], mod: {Vending, []}]
   end
 
   # Dependencies can be Hex packages:

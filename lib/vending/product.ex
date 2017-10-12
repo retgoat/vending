@@ -1,4 +1,5 @@
-defmodule Product do
+defmodule Vending.Product do
+  alias Vending.Cash
 
   @products [
     %{id: 1, name: "Tiny's used spacecraft",

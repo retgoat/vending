@@ -1,4 +1,8 @@
-defmodule Cash do
+defmodule Vending.Cash do
+
+  def start_link do
+    Agent.start_link(fn -> MapSet.new end, name: __MODULE__)
+  end
 
   def currency do
     {:ok, cur} = Application.fetch_env(:vending, :currency)
@@ -9,9 +13,6 @@ defmodule Cash do
     [0.1, 0.25, 0.5, 1.0, 2.0, 5.0, 10.0]
   end
 
-  def start_link do
-    Agent.start_link(fn -> MapSet.new end, name: __MODULE__)
-  end
 
   @doc """
   Gets a value from the bucket by `key`.
@@ -35,16 +36,16 @@ defmodule Cash do
   Adds given `value` to the current bucket value
   """
   def add(value) do
-    store(get + value)
-    get
+    store(get() + value)
+    get()
   end
 
   @doc """
   Deducts given `value` from the current bucket value
   """
   def deduct(value) do
-    store(get - value)
-    get
+    store(get() - value)
+    get()
   end
 
   @doc """
